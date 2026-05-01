@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoAventura</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="header">
+    <img src="img/ZarigüellaActualizado_19_Abril.png" alt="Logo" class="logo">
+
+    <button class="btn-accesibilidad" onclick="abrirAccesibilidad()">
+        <img src="iconos/accessibility.png" alt="Accesibilidad">
+    </button>
+</header>
+
+<!-- POPUP -->
+<div id="popup-accesibilidad" class="popup">
+    <div class="popup-contenido">
+        <span class="cerrar" onclick="cerrarAccesibilidad()">✖</span>
+
+        <div class="opciones">
+            <div class="opcion"><h2>A+</h2><p>Aumentar letra</p></div>
+            <div class="opcion"><h2>A-</h2><p>Disminuir letra</p></div>
+            <div class="opcion"><div class="icono contraste"></div><p>Contraste</p></div>
+            <div class="opcion"><img src="iconos/book_828370.png"><p>Dislexia</p></div>
+            <div class="opcion"><img src="iconos/ear_748202.png"><p>Lector</p></div>
+            <div class="opcion"><img src="iconos/eye_4126162.png"><p>Daltonismo</p></div>
+        </div>
+    </div>
+</div>
+
+<main class="hero">
+
+    <div class="mensaje">
+        <h1>¡Hey, aquí empieza la Eco-aventura!</h1>
+    </div>
+
+    <div class="login-box">
+
+        <div class="lado-izq">
+            <input type="text" id="usuario" placeholder="Usuario">
+            <input type="password" id="password" placeholder="Contraseña">
+            <p id="mensaje-error" class="error"></p>
+            <button class="btn" onclick="login()">¡Ingresa!</button>
+        </div>
+
+        <div class="linea"></div>
+
+        <div class="lado-der">
+            <p>Ingresa también con</p>
+
+            <div class="social">
+                <button class="accesoGoogle">
+                    <img src="iconos/google.png">
+                </button>
+                <button class="accesoapple">
+                    <img src="iconos/apple.png">
+                </button>
+            </div>
+
+            <p>Ó</p>
+
+            <a href="registro.html" class="btn">¡Regístrate!</a>
+        </div>
+
+    </div>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-col">
+        <p>Institución Educativa Rafael J. Mejía</p>
+        <p>© 2026 - Grupo 8</p>
+    </div>
+
+    <div class="footer-col">
+        <p>Acerca de nosotros</p>
+        <p>Política de privacidad</p>
+        <p>Tratamiento de datos</p>
+    </div>
+
+    <div class="footer-col">
+        <p>Visítanos:</p>
+        <p>rafaeljmejia.master2000.net</p>
+    </div>
+</footer>
+
+<!-- BOTÓN IA -->
+<button class="avatar-mariposa" onclick="abrirChat()">
+    <img src="img/butterfly_883748.png" class="mariposa-imagen">
+</button>
+
+<div id="popup-chat-ia" class="popup-chat">
+    <div class="chat-burbuja">
+        <span class="cerrar-chat" onclick="cerrarChat()">✖</span>
+
+        <div class="chat-area-texto">
+            <p><strong>Asistente:</strong> ¡Hola! Soy tu guía ambiental 🌱</p>
+        </div>
+
+        <input type="text" placeholder="Escribe aquí...">
+    </div>
+</div>
+
+<script>
+function abrirAccesibilidad() {
+    document.getElementById("popup-accesibilidad").style.display = "flex";
+}
+function cerrarAccesibilidad() {
+    document.getElementById("popup-accesibilidad").style.display = "none";
+}
+
+function login() {
+    let usuario = document.getElementById("usuario").value;
+    let password = document.getElementById("password").value;
+    let mensaje = document.getElementById("mensaje-error");
+
+    if (usuario === "admin" && password === "1234") {
+        alert("¡Bienvenido!");
+    } else {
+        mensaje.textContent = "Usuario o contraseña incorrectos";
+    }
+}
+
+function abrirChat() {
+    document.getElementById("popup-chat-ia").style.display = "flex";
+}
+function cerrarChat() {
+    document.getElementById("popup-chat-ia").style.display = "none";
+}
+</script>
+
+</body>
+</html>
